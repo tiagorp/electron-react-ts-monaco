@@ -61,7 +61,8 @@ const configurationRenderer = {
     //devtool: 'cheap-source-map',
 
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: [path.resolve(__dirname, 'dist'), path.resolve(__dirname, 'node_modules')],
+        contentBasePublicPath: ['/', '/node_modules'],
         historyApiFallback: true,
         compress: true,
         port: 4000,
